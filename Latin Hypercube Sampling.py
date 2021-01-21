@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 # Example
 
 def simple_function(x,y):
-    return(2*x - y**2 + 28)
+    return(2* - y**0.5 + 24)
 
 def LatinHyperCubePerameters (limits_x, limits_y, data_points):
     range_x=np.linspace(limits_x[0],limits_x[1],data_points+1)
@@ -39,18 +39,24 @@ def LatinHyperCubePerameters (limits_x, limits_y, data_points):
 
     return(solution)
 
+def LatinHyperCubePlot(limits_x, limits_y, data_points):
+    
+    data=LatinHyperCubePerameters (limits_x, limits_y, data_points)
+    solution=simple_function(data[0],data[1])
+
+    # Create two subplots and unpack the output array immediately
+    Figure_1, (ax1, ax2) = plt.subplots(1, 2, sharey=True)
+    ax1.scatter(data[0],solution)
+    ax1.set_xlabel("X-Data")
+    ax1.set_ylabel("Function")
+    ax1.grid()
+    ax2.scatter(data[1],solution)
+    ax2.set_xlabel("Y-Data")
+    ax2.grid()
+
+    plt.show()
+
 limits_x=((0,10))
 limits_y=((0,5))
 data_points= 1000
-data=LatinHyperCubePerameters (limits_x, limits_y, data_points)
-solution=simple_function(data[0],data[1])
-plt.figure(1)
-plt.xlabel("X-Data")
-plt.ylabel("Function")
-plt.scatter(data[0],solution)
-plt.figure(2)
-plt.xlabel("Y-Data")
-plt.ylabel("Function")
-plt.scatter(data[1],solution)
-plt.show()
-
+LatinHyperCubePlot(limits_x, limits_y, data_points)
