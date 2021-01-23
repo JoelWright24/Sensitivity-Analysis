@@ -1,8 +1,4 @@
-# Sensitivity Analysis
-
- The folder, sensitivity analysis, is a toolbox for analysing the sensitivity of systems. In the script Latin_Hypercube_Sampling.py a simple function is included with only two variables. This is a proof of concept and the script can be edited for a more complex system.
-
-## Latin Hypercube Sampling
+# Latin Hypercube Sampling
 
 Latin Hypercube Sampling is a memory intensive global sampling method to compare the effect of the varibles in a function.
 
